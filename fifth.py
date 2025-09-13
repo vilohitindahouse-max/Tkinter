@@ -1,7 +1,7 @@
-import tkinter
-import datetime
+import tkinter 
+from tkinter import messagebox
 window = tkinter.Tk()
-window.title("My first Tkinter program")
+window.title("Messagebox program")
 window.geometry("500x400")
 main_heading = tkinter.Label(text = "Hey there!", fg = "white", bg = "black", height = 1, width = 30)
 main_heading.pack(pady = 20)
@@ -12,12 +12,9 @@ nameentry.pack()
 def displayname():
     name = nameentry.get()
     global message
-    message = "\n,  Welcome to application,  today's day is " 
-    day = datetime.datetime.today().strftime("%A")
     greet = "Hello " + name
     textbox.insert(tkinter.END, greet)
-    textbox.insert(tkinter.END, message)
-    textbox.insert(tkinter.END, day)
+    messagebox.showwarning("Alert", greet)
 textbox = tkinter.Text(window,height = 5, width = 40)
 clickbutton = tkinter.Button(window,text = "begin", command = displayname, height = 1, width = 15)
 textbox.pack(pady = 10)
